@@ -1,0 +1,19 @@
+{
+  "fields": {
+    "Name\n": "Deadlift",
+    "Sex": "M",
+    "Height": 190,
+    "Weight": 197,
+    "Rank": "Junior Data Analyst",
+    "Signature": "THE BEAST",
+    "Date": "21.10.2025",
+    "Department": "Medical Data Department",
+    "Background": "Deadlift's background includes a start as a competitive national swimmer, a period working as a truck mechanic, and an eventual transition to becoming a professional strongman after getting into bodybuilding. Born in Newcastle-under-Lyme, England, on January 15, 1988, he was once a high-achieving swimmer who competed at the national level before focusing on strength sports.",
+    "Strengths": "Strength.",
+    "Weaknesses": "Icelandic people."
+    "Date_of_birth\n": "15.01.1988",
+    "Blood_type\n":  "A+",
+    "Employee_code\n": "IT20-23",
+    "Security_level\n": "C"
+  }
+}

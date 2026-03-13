@@ -1,0 +1,19 @@
+{
+  "fields": {
+    "Name\n": "Darth Revan",
+    "Sex\n": "M",
+    "Height\n": "1.85",
+    "Weight\n": "87 kg",
+    "Rank\n": "Junior Data Analyst",
+    "field": "C",
+    "Signature\n": "Revan",
+    "Date\n": "21.08.2025",
+    "Department\n": "Medical Data Department",
+    "Background\n": "Initially a respected Jedi, he defied the Jedi Council by leading a faction of Jedi Knights into the Mandalorian Wars, becoming a celebrated war hero. Driven by a desire to defeat the Mandalorians, he delved into the Unknown Regions and discovered an ancient Sith Empire, ultimately falling to the dark side and becoming Darth Revan.",
+    "Strengths\n": "exceptional mastery of both the light and dark sides of the Force, his strategic brilliance, and his formidable lightsaber combat skills",
+    "Weaknesses\n": "Darth Revan's primary weakness was his overconfidence and arrogance.",
+    "Date_of_birth\n": "05.08.1966",
+    "Blood_type\n": "Unknown",
+    "Employee_code\n": "IT25-23"
+  }
+}
