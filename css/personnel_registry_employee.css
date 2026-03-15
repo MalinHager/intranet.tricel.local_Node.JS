@@ -1,4 +1,3 @@
-<style>
 #infomiddle
 {
 
@@ -21,7 +20,7 @@
 	width: 164px;
 	padding: 0px;
 	border: 1px solid;
-	border-color: #000000;
+	border-color: #00000;
 }
 #employeecode
 {
@@ -70,4 +69,3 @@ td.valuecol
 	height: 1px;
 	background-color: #000000;
 }
-</style>
