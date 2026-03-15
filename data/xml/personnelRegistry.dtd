@@ -1,0 +1,23 @@
+<!DOCTYPE personnelRegistry [
+
+<!ELEMENT personnelRegistry (employee*) >
+
+<!ELEMENT employee (employeeCode, name, signatureDate, dateOfBirth, sex, bloodType, height, weight, rank, securityAccessLevel, department, background, strengths, weaknesses)>
+
+<!ELEMENT employeeCode (#PCDATA) >
+<!ELEMENT name (#PCDATA) >
+<!ELEMENT signatureDate (#PCDATA) >
+<!ELEMENT dateOfBirth (#PCDATA) >
+<!ELEMENT sex (#PCDATA) >
+<!ELEMENT bloodType (#PCDATA) >
+<!ELEMENT height (#PCDATA) >
+<!ELEMENT weight (#PCDATA) >
+<!ELEMENT rank (#PCDATA) >
+<!ELEMENT securityAccessLevel (#PCDATA) >
+<!ELEMENT department (#PCDATA) >
+
+<!ELEMENT background (#PCDATA) >
+<!ELEMENT strengths (#PCDATA) >
+<!ELEMENT weaknesses (#PCDATA) >
+
+]>
