@@ -1,0 +1,26 @@
+<div id="hqPopup" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:100;background:#ffffff;border:2px solid #003366;width:360px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.3);font-family:monospace;">
+    <div style="font-weight:bold;font-size:13px;color:#003366;margin-bottom:16px;letter-spacing:2px;">[ TRICELL HQ — SECURE CONNECT ]</div>
+    <div id="hqChecklist" style="font-size:11px;color:#000000;line-height:2;">
+        <div id="hqStep0">&#9633; Checking server up-status...</div>
+        <div id="hqStep1">&#9633; Loading connection bootstrap...</div>
+        <div id="hqStep2">&#9633; Starting encryption engine...</div>
+        <div id="hqStep3">&#9633; Creating VPN-tunnel...</div>
+        <div id="hqStep4">&#9633; Checking credentials...</div>
+        <div id="hqStep5">&#9633; Loading database handshake...</div>
+        <div id="hqStep6">&#9633; Try/catch connecting...</div>
+        <div id="hqStep7">&#9633; Checking connection status...</div>
+    </div>
+    <div id="hqDoneMsg" style="display:none;margin-top:14px;color:#2a7a2a;font-size:12px;font-weight:bold;letter-spacing:1px;">You are connected</div>
+</div>
+
+<style>
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+  }
+  #hqPopup {
+    border-color: #003366;
+    animation: pulse 2s infinite;
+  }
+</style>

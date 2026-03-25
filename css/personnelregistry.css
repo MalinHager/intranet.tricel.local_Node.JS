@@ -1,0 +1,175 @@
+*
+{
+	font-size: 14px;
+	font-family: arial;
+}
+personnelRegistry
+{
+	backgroun-color: #ffffff;
+	width: 100%;
+}
+employee
+{
+	display: table;
+	margin-left: 30;
+	border-top: 1px solid;
+	border-collapse: collapse;
+	border-color: #000000;
+}
+employeeCode, name, signatureDate, dateOfBirth, sex, bloodType, height, weight, rank, securityAccessLevel, department
+{
+	font-family: arial;
+	font-weight: bold;
+	color: #ffffff;
+	background-color: #b0dfdf;
+	text-align: center;
+	vertical-align: middle;
+	height: 30px;
+	display: table-cell;
+}
+employeeCode, signatureDate, securityAccessLevel
+{
+	width: 100px;
+}
+rank
+{
+	width: 150px;
+}
+department
+{
+	width: 250px;
+}
+dateOfBirth, sex, bloodType, height, weight
+{
+	width: 70px;
+}
+name
+{
+	display: table-cell;
+	width: 210px;
+	background-color: #548d8d;
+	color: #0000ff;
+	font-size: 14pt;
+	font-weight: bold;
+	text-align: left;
+	padding-left: 2px;
+	vertical-align: middle;
+}
+background, strengths, weaknesses
+{
+	display: none;
+}
+td.infoheadinglight
+{
+	height: 30px;
+	background-color: #b0dfdf;
+	font-size: 14px;
+	text-align: center;
+	font-weight: bold;
+	color: #ffffff";
+}
+td.infoheadingdark
+{
+	height: 30px;
+	background-color: #548d8d;
+	padding: 5px;
+	font-weight: bold;
+	color: #ffffff;
+	font-size: 16px;
+}
+td.infolight
+{
+	height: 20px;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+}
+td.infodark
+{
+	height: 20px;
+	background-color: #cccccc;
+	padding: 5px;
+	font-weight: bold;
+	color: #ffffff;
+	font-size: 16px;
+}
+#personnel
+{
+	width: 716px;
+	padding: 0px;
+	border: 1px solid;
+	border-color: #000000;
+	border-collapse: collapse;
+
+}
+#personnelcontainer
+{
+	display: none;
+}
+#personnel td
+{
+	border: 1px solid;
+	border-color: #000000;
+	border-collapse: collapse;
+}
+#table-resp
+{
+	width: 716px;
+	display: table;
+	font-size: 12px;
+	font-family : Arial, Verdana, Geneva, Helvetica, sans-serif;
+	color: #000000;
+}
+#table-header
+{
+	display: table-header-group;
+	height: 30px;
+}
+.table-header-cell-light, .table-header-cell-dark
+{
+	display: table-cell;
+	border: 1px solid;
+	border-color: #000000;
+	border-collapse: collapse;
+	vertical-align: middle;
+	font-weight: bold;
+}
+.table-header-cell-light
+{
+	text-align: center;
+	background-color: #b0dfdf;
+}
+.table-header-cell-dark
+{
+	padding: 5px;
+	text-align: left;
+	vertical-align: middle;
+	background-color: #548d8d;
+	font-size: 16px;
+}
+#table-body
+{
+	display: table-row-group;
+}
+.resp-table-row
+{
+	display: table-row;
+}
+.table-body-cell, .table-body-cell-bigger
+{
+	display: table-cell;
+	border: 1px solid;
+	border-color: #000000;
+	border-collapse: collapse;
+	text-align: center;
+	vertical-align: middle;
+}
+.table-body-cell-bigger
+{
+	text-align: left;
+	height: 20px;
+	background-color: #cccccc;
+	padding: 5px;
+	color: #ffffff;
+	font-size: 16px;
+}
