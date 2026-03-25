@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv">
+
+<head>
+<title>Tricell Laboratories Inc, Åland</title>
+
+<script language="JavaScript" type="text/javascript" src="/scripts/leftmenu.js"></script>
+
+<link rel="stylesheet" href="/css/index.css" /><!-- Gemensam CSS -->
+<link rel="stylesheet" href="/css/leftmenu.css" />
+<link rel="stylesheet" type="text/css" href="/css/viruscss.css"><!-- för fileupload.js -->
+
+<!-- Egna CSS-definitioner som berör endast denna sida -->
+<style>
+
+</style>
+
+<script language="JavaScript" src="/scripts/MD5.js"></script>
+
+
+<script language="JavaScript">
+    let keys = {t:false, r:false};
+
+    document.addEventListener("keydown", event =>
+    {
+	    if(event.key =="t")
+	    {
+                keys.t = true;
+	    }
+        if(event.key =="r")
+	    {
+                keys.r = true;
+	    }
+        if(keys.t && keys.r)
+	    {
+               document.getElementById("loginLayer").style.display = "block";
+	    }
+    });
+        document.addEventListener("keyup", event =>
+    {
+	    if(event.key =="t")
+	    {
+              keys.t = false;
+	    }
+        if(event.key =="r")
+	    {
+              keys.r = false;
+	    }
+    	
+    });
+            document.addEventListener("keydown", event =>
+    {
+	    if(event.key =="Escape")
+	    {
+               document.getElementById("loginLayer").style.display = "none";
+	    }
+    	
+    });
+
+    function hashing()
+{
+	document.loginform.password.value = hex_md5(document.loginform.password.value);
+}
+
+function loginFormCheck()
+{
+	if(document.loginform.employeecode.value=="" || document.loginform.employeecode.value.indexOf("-")==-1)
+	{
+		alert("You must give a valid Employee Code!");
+		return false;
+	}
+	if(document.loginform.password.value=="")
+	{
+		alert("You must give a Password!");
+		return false;
+	}
+}
+function changepasswordFormCheck()
+{
+	if(document.changepasswordform.employeecode.value=="" || document.changepasswordform.employeecode.value.indexOf("-")==-1)
+	{
+		alert("You must give a valid Employee Code!");
+		return false;
+	}
+	if(document.changepasswordform.password.value=="")
+	{
+		alert("You must give a Password!");
+		return false;
+	}
+	if(document.changepasswordform.newpassword.value=="")
+	{
+		alert("You must give a NEW Password!");
+		return false;
+	}
+}
+
+function changepasswordhashing()
+{
+	document.changepasswordform.password.value = hex_md5(document.changepasswordform.password.value);
+	document.changepasswordform.newpassword.value = hex_md5(document.changepasswordform.newpassword.value);
+
+}
+</script>
+
+<!-- GEMENSAMMA FILER -->
+<link rel="stylesheet" href="/css/index.css" />
+<link rel="stylesheet" href="/css/leftmenu.css" />
+
+<style type="text/css">
+#loginLayer
+{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+	background-color: #98e6b2;
+	width: 250px;
+	padding: 10px;
+	border: #294e13 2px dashed;
+	display: none;
+}
+input[type=text], input[type=file], input[type=data], input[type=password], select,textarea
+{
+	padding: 5px 5px;
+	box-sizing: border-box;
+	border: 1px solid black;
+	background-color: #d7ecff;
+	font-size: 16px;
+}
+input[type=file]
+{
+	color: transparent;
+	width: 166px;
+}
+select option
+{
+	margin: 40px;
+	color:#fff;
+	font-size: 16px;
+	background: rgba(0,0,0,0.4);
+}
+
+.container 
+{
+  display: flex;
+  flex-direction: column;
+  min-height: 300px; /* Eller den höjd du önskar */
+}
+
+.bottom-div 
+{
+  margin-top: auto;
+}
+
+</style>
+
+</head>
+
+
+<body>
+<div id="loginLayer">
+	<h1>Login to Tricell</h1>
+	<form name="loginform" action="http://localhost:3000/api/login" onSubmit="return loginFormCheck()" method="get">
+	Employee Code: <input type="text" name="employeecode" id="employeecode" size="7" maxlength="7" />
+	<p />
+	Password: <input type="password" name="password" id="password" size="7" maxlength="255" />
+	<p />
+	<input type="submit" value="Login" onClick="hashing()" /><input type="reset" value="Reset" />
+	</form>
+	<h1>Change password</h1>
+	<form name="changepasswordform" action="http://localhost:3000/api/login" onSubmit="return changepasswordform()" method="post">
+	Employee Code: <input type="text" name="employeecode" id="employeecode" size="7" maxlength="7" />
+	<p />
+	Password: <input type="password" name="password" id="password" size="7" maxlength="255" />
+	<p />
+	New Password: <input type="password" name="newpassword" id="newpassword" size="7" maxlength="255" />
+	<p />
+	<input type="submit" value="Change" onClick="changepasswordhashing()" /><input type="reset" value="Reset" />
+	</form>
+</div>
