@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>TRICELL - GLOBAL MONITORING SYSTEM</title>
+    <style>
+        body {
+            background-color: #000;
+            color: white;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+            display: block;
+        }
+
+        h1 {
+            border-left: 10px solid #ff0000;
+            padding-left: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .lab-row {
+            display: grid;
+            grid-template-columns: 410px 300px;
+            gap: 25px;
+            align-items: start;
+            border-bottom: 1px solid #222;
+            padding-bottom: 20px;
+        }
+
+        .video-frame {
+            width: 410px;
+            height: 315px;
+            border: 2px solid #336699;
+            background-color: #050505;
+            overflow: hidden;
+            position: relative;
+        }
+
+        object {
+            width: 410px;
+            height: 315px;
+            border: none;
+            overflow: hidden;
+        }
+
+        .sensor-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .sensor-panel h3 {
+            margin: 0 0 5px 0;
+            color: #aad037;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+
+        .sensor-box {
+            width: 250px;
+            padding: 8px;
+            background-color: #cfe7fd;
+            color: #171819;
+            text-align: center;
+            font-weight: bold;
+            border-left: 5px solid #336699;
+            margin-bottom: 5px;
+        }
+
+        .label {
+            font-size: 0.7em;
+            display: block;
+            color: #555;
+            text-transform: uppercase;
+        }
+    </style>
+
+    <script>
+        function updateValues() {
+            // TCL #3 - T-VERONICA (10-12 C, 17-20% Hum, 145-150 Lm)
+            document.getElementById("t-temp").innerHTML = Math.floor(Math.random() * (12 - 10 + 1) + 10);
+            document.getElementById("t-hum").innerHTML = Math.floor(Math.random() * (20 - 17 + 1) + 17);
+            document.getElementById("t-light").innerHTML = Math.floor(Math.random() * (150 - 145 + 1) + 145);
+
+            // TCL #4 - UROBOROS (13-15 C, 17-20% Hum, 7-10 Lm)
+            document.getElementById("u-temp").innerHTML = Math.floor(Math.random() * (15 - 13 + 1) + 13);
+            document.getElementById("u-hum").innerHTML = Math.floor(Math.random() * (20 - 17 + 1) + 17);
+            document.getElementById("u-light").innerHTML = Math.floor(Math.random() * (10 - 7 + 1) + 7);
+
+            // TCL #2 - TYRANT (7-10 C, 17-20% Hum, 196-210 Lm)
+            document.getElementById("ty-temp").innerHTML = Math.floor(Math.random() * (10 - 7 + 1) + 7);
+            document.getElementById("ty-hum").innerHTML = Math.floor(Math.random() * (20 - 17 + 1) + 17);
+            document.getElementById("ty-light").innerHTML = Math.floor(Math.random() * (210 - 196 + 1) + 196);
+        }
+    </script>
+</head>
+
+<body onload="setInterval(updateValues, 2000)">
+
+    <h1>Tricell - Realtime Monitoring</h1>
+
+    <div class="dashboard">
+
+        <div class="lab-row">
+            <div class="video-frame">
+                <object type="text/html" data="http://localhost:3000/t-veronica/livestream.html"></object>
+            </div>
+            <div class="sensor-panel">
+                <h3>TCL #3 - T-Veronica</h3>
+                <div class="sensor-box"><span class="label">Temperature < 12 C</span><span id="t-temp">--</span></div>
+                <div class="sensor-box"><span class="label">Humidity < 20%</span><span id="t-hum">--</span></div>
+                <div class="sensor-box"><span class="label">Light < 150 Lm</span><span id="t-light">--</span></div>
+            </div>
+        </div>
+
+        <div class="lab-row">
+            <div class="video-frame">
+                <object type="text/html" data="http://localhost:3000/uroboros/livestream.html"></object>
+            </div>
+            <div class="sensor-panel">
+                <h3>TCL #4 - Uroboros</h3>
+                <div class="sensor-box"><span class="label">Temperature < 15 C</span><span id="u-temp">--</span></div>
+                <div class="sensor-box"><span class="label">Humidity < 20%</span><span id="u-hum">--</span></div>
+                <div class="sensor-box"><span class="label">Light < 10 Lm</span><span id="u-light">--</span></div>
+            </div>
+        </div>
+
+        <div class="lab-row">
+            <div class="video-frame">
+                <object type="text/html" data="http://localhost:3000/tyrant/livestream.html"></object>
+            </div>
+            <div class="sensor-panel">
+                <h3>TCL #2 - Tyrant Containment</h3>
+                <div class="sensor-box"><span class="label">Temperature < 10 C</span><span id="ty-temp">--</span></div>
+                <div class="sensor-box"><span class="label">Humidity < 20%</span><span id="ty-hum">--</span></div>
+                <div class="sensor-box"><span class="label">Light < 210 Lm</span><span id="ty-light">--</span></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
